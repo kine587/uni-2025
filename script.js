@@ -22,7 +22,7 @@ console.log(exampleText);
 // string (text)
 // camel text first word lowercase and second word uppercase
 
-let exampleText = "5";
+let exampleText = "my text";
 console.log(exampleText);
 
 // integer (number)
@@ -51,24 +51,24 @@ console.log(exampleArray[1]);
     age: 37
 );
  */
-console.log[person];
+console.log(person);
 
 // undefying
-let undefindExample;
+let undefinedExample;
 console.log(undefinedExample);
 
 // null
-nullExample(nullExample);
+nullExample = null;
 console.log(nullExample);
 
 // let and const const is constant let can be variable
 // declaring variables
 
-let Changeablestring = "i can change";
-console.log(Changeablestring);
+let ChangeableString = "i can change";
+console.log(ChangeableString);
 
-Changeablestring = "ive changed";
-console.log(Changeablestring);
+ChangeableString = "ive changed";
+console.log(ChangeableString);
 
 const fixedString = "i can not be reclared";
 console.log(fixedString);
