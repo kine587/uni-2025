@@ -76,11 +76,11 @@ console.log(fixedString);
 /*fixedString = "im attemting to change";
 console.log(fixedString);*/
 
-let healthpoints = 100;
-console.log(healthpoints);
+let healthPoints = 100;
+console.log(healthPoints);
 
-healthpoints = 50;
-console.log(healthpoints);
+healthPoints = 50;
+console.log(healthPoints);
 
 const myArray = [100, 5, 25];
 console.log(myArray);
@@ -101,10 +101,10 @@ console.log(num1 % num2); // what remains
 
 //using the + operator with the string
 
-let firstname = "john";
-let lastname = "doe";
-let fullname = firstname + " " + lastname;
-console.log(fullname);
+let firstName = "john";
+let lastName = "doe";
+let fullName = firstName + " " + lastName;
+console.log(fullName);
 
 let counter = 0;
 console.log(counter);
