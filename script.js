@@ -119,7 +119,7 @@ console.log(counter);
 
 counter = counter + 5;
 console.log(counter);
-// this is shorthand
+// this is shorthand addiction
 counter += 5;
 console.log(counter);
 
@@ -127,7 +127,7 @@ let score = 10;
 //subtraction
 score -= 3;
 console.log(score);
-//multiple
+//multiplication
 score *= 2;
 console.log(score);
 //division
