@@ -1,138 +1,119 @@
-// variables and opperators
+// conditions and related options
 
-// section 1 commenting our code
+// type of operator
 
-// shift alt a hot key for comment
-/* jdkg
-sldgfos
-sdhfsl */
+const myVariable = [1, 2, 3];
+console.log(typeof myVariable);
 
-// console log
-console.log("Hello World");
+// comparison operators
 
-// variables and data types here we will see different types
+console.log(15 > 20); // greater
+console.log(15 < 20); //less
+console.log(15 >= 15); //greater or equal
+console.log(20 <= 19); //less or equal
+// == operator check if equal
+console.log(10 == 10);
+// === operator operatorchecks bouth value and type
+console.log(10 === "10");
 
-// shift alt down arrow duplicate line
+console.log(5 == 5.0);
 
-exampleText = "this is my variable text";
-console.log(exampleText);
-console.log(exampleText);
-console.log(exampleText);
+console.log(15 != 15); // is it true that 15 equals 15? (not equal)
 
-// string (text)
-// camel text first word lowercase and second word uppercase
+// condictional with if, if else, else
 
-let exampleText = "my text";
-console.log(exampleText);
+// basic "if statement"
+let temperature = 1;
+if (temperature >= 20) {
+  console.log("its a hot day");
+} else if (temperature >= 10) {
+  console.log("its a mid day");
+} else if (temperature > 0) {
+  console.log("its freezing");
+} else {
+  console.log("its a cold day");
+}
 
-// integer (number)
+// logical operators and && or ||
 
-const myNum = 5;
-console.log(myNum);
+//and (&&) requires bout conditions to be true
 
-// booleon (true or false)
+const age = 22;
+const hasLicense = true;
+const disqualified = false;
 
-booleoanOne = true;
-BooleanTwo = false;
-console.log(booleoanOne);
-console.log(BooleanTwo);
+if (age >= 18 && hasLicense && disqualified !== true) {
+  console.log("you can drive");
+} else {
+  console.log("you cant drive sorry");
+}
 
-//array (list of items)
-// index is the possision of the item in the array, starting at 0
+// or (||) reqires at least one condition to be true
 
-exampleArray = [true, 100, "hello"];
+/* const day = saturday;
+if (day === "saturday" || day === "sunday") {
+  console.log("its the weekend");
+} else {
+  ("its the weekday");
+} */
 
-console.log(exampleArray[1]);
+// ternary operator
 
-// object
+//DRY - dont repeat yourself
 
-/* person = ( 
-    name: "joe",
-    age: 37
-);
- */
-console.log(person);
+const isMember = false;
+const fee = isMember ? " $5" : " $10";
 
-// undefying
-let undefinedExample;
-console.log(undefinedExample);
+console.log("you pay", fee);
 
-// null
-nullExample = null;
-console.log(nullExample);
+/* if(isMember === true) {
+    console.log("you pay $5")
+} else {
+    console.log(you pay $10);
+} */
 
-// let and const const is constant let can be variable
-// declaring variables
+// switch statement
 
-let ChangeableString = "i can change";
-console.log(ChangeableString);
+/* const fruit = "Apple"
+switch (fruit) {
+    case:"Apple" :
+    console.log(apples are delicius);
+    break;
+    case:"bannana":
+    console.log("bannanas is great");
+    break;
+default:
+    console.log("unknown fruit detected")
+} */
 
-ChangeableString = "ive changed";
-console.log(ChangeableString);
+// truthy or falsey
 
-const fixedString = "i can not be reclared";
-console.log(fixedString);
+let test = {};
 
-/*fixedString = "im attemting to change";
-console.log(fixedString);*/
+if ("hello world") {
+  console.log("its true");
+} else {
+  console.log("its false");
+}
 
-let healthPoints = 100;
-console.log(healthPoints);
+//string with content is true
+// string without content is false
+// positive integer is true
+// negative integar is true
+// zero is false
+// array with content is true
+// empty array is true
+// null is false
+// empty object is true
+// object is true
 
-healthPoints = 50;
-console.log(healthPoints);
+// template literal - template string
 
-const myArray = [100, 5, 25];
-console.log(myArray);
-myArray[1] = 400;
-console.log(myArray);
+const firstname = "Ola";
+const lastname = "Nordman";
 
-// basic opperators
+const fullname = ``firstName lastName`` 
 
-let num1 = 10;
-let num2 = 5;
-console.log(num1, num2);
+/* const fullname = firstname + "" + leastname; */
 
-console.log(num1 + num2); //addiction 15
-console.log(num1 - num2); //subtraction 5
-console.log(num1 * num2); //multiplication 50
-console.log(num1 / num2); //division 2
-console.log(num1 % num2); // what remains
-
-//using the + operator with the string
-
-let firstName = "john";
-let lastName = "doe";
-let fullName = firstName + " " + lastName;
-console.log(fullName);
-
-let counter = 0;
-console.log(counter);
-counter++;
-counter++;
-counter++;
-counter++;
-console.log(counter);
-counter--;
-counter--;
-console.log(counter);
-
-counter = counter + 5;
-console.log(counter);
-// this is shorthand addiction
-counter += 5;
-console.log(counter);
-
-let score = 10;
-//subtraction
-score -= 3;
-console.log(score);
-//multiplication
-score *= 2;
-console.log(score);
-//division
-score /= 4;
-console.log(score);
-// reminder
-score %= 5;
-console.log(score);
+console.log(fullname);
