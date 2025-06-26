@@ -49,8 +49,8 @@ console.log(exampleArray[1]);
 /* person = ( 
     name: "joe",
     age: 37
-);
- */
+); */
+
 console.log(person);
 
 // undefying
@@ -97,7 +97,7 @@ console.log(num1 + num2); //addiction 15
 console.log(num1 - num2); //subtraction 5
 console.log(num1 * num2); //multiplication 50
 console.log(num1 / num2); //division 2
-console.log(num1 % num2); // what remains
+console.log(num1 % num2); // what remains (modulus)
 
 //using the + operator with the string
 

@@ -1,119 +1,101 @@
-// conditions and related options
+// recap
+// variables data types and operators
 
-// type of operator
+// online store manage
 
-const myVariable = [1, 2, 3];
-console.log(typeof myVariable);
+const storeName = "tech haven"; // string
+const productName = "wireless earbuds"; // string
+let productPrice = 75; // Number (interger)
+let productQuantity = 25; // interger
+let isInStock = true; // booleon
+let productTags = ["audio", "wireless", "accesory"]; // array
+let discount; //undefined
+discount = true;
+// console
+console.log(storeName);
+console.log(productName);
+console.log(productPrice);
+console.log(productQuantity);
+console.log(isInStock);
+console.log(productTags);
+console.log(discount);
 
-// comparison operators
+console.log(productTags[2]);
 
-console.log(15 > 20); // greater
-console.log(15 < 20); //less
-console.log(15 >= 15); //greater or equal
-console.log(20 <= 19); //less or equal
-// == operator check if equal
-console.log(10 == 10);
-// === operator operatorchecks bouth value and type
-console.log(10 === "10");
+// calculate
 
-console.log(5 == 5.0);
+productQuantity++;
 
-console.log(15 != 15); // is it true that 15 equals 15? (not equal)
+const totalBasket = productPrice * productQuantity;
 
-// condictional with if, if else, else
+console.log(totalBasket);
 
-// basic "if statement"
-let temperature = 1;
-if (temperature >= 20) {
-  console.log("its a hot day");
-} else if (temperature >= 10) {
-  console.log("its a mid day");
-} else if (temperature > 0) {
-  console.log("its freezing");
+//compound assignment: increase product price
+
+productPrice += 10;
+console.log(productPrice);
+/* productPrice = productPrice + 10 */
+
+//increase quantity
+
+productQuantity++;
+productQuantity--;
+console.log(productQuantity);
+
+// using the module  operator
+// find value when the total value is divided by 50
+
+console.log(totalBasket / 50);
+
+const reminder = totalBasket % 50;
+console.log(reminder);
+
+// condictional and logical
+
+//deside promotion based on total things in basket
+
+if (totalBasket > 350) {
+  console.log("you qualify for free delivery");
+} else if (totalBasket >= 300) {
+  console.log("youre close to free delivery spend 350 or more to qualify");
 } else {
-  console.log("its a cold day");
+  console.log("free delivery with orders 350 or more");
+}
+// condiction to say "youre close to free delivery"
+
+// logical operators
+
+// isInStock true
+// discount true
+// productQuantity is more than 20
+
+if (isInStock && (discount === true || productQuantity > 20)) {
+  console.log("congratulations your eligeble to a special offer");
 }
 
-// logical operators and && or ||
+//ternary opperator:
 
-//and (&&) requires bout conditions to be true
+// if their total basket is over 350 they get free shipping othervise its a 15 fee
+const shippingCost = totalBasket >= 350 ? "free shipping" : "15 delivery fee";
+console.log(shippingCost);
 
-const age = 22;
-const hasLicense = true;
-const disqualified = false;
+// typeoff opperator
 
-if (age >= 18 && hasLicense && disqualified !== true) {
-  console.log("you can drive");
-} else {
-  console.log("you cant drive sorry");
-}
+console.log(typeof storeName);
+console.log(typeof productPrice);
+console.log(typeof isInStock);
+console.log(typeof productTags);
 
-// or (||) reqires at least one condition to be true
+//temple litterals
 
-/* const day = saturday;
-if (day === "saturday" || day === "sunday") {
-  console.log("its the weekend");
-} else {
-  ("its the weekday");
-} */
+/* const welcomeMessage =
+  "Welcome to" +
+  " " +
+  storeName +
+  " " +
+  "we hope you enjoy your stay, our current offer is on" +
+  " " +
+  productName; */
 
-// ternary operator
-
-//DRY - dont repeat yourself
-
-const isMember = false;
-const fee = isMember ? " $5" : " $10";
-
-console.log("you pay", fee);
-
-/* if(isMember === true) {
-    console.log("you pay $5")
-} else {
-    console.log(you pay $10);
-} */
-
-// switch statement
-
-/* const fruit = "Apple"
-switch (fruit) {
-    case:"Apple" :
-    console.log(apples are delicius);
-    break;
-    case:"bannana":
-    console.log("bannanas is great");
-    break;
-default:
-    console.log("unknown fruit detected")
-} */
-
-// truthy or falsey
-
-let test = {};
-
-if ("hello world") {
-  console.log("its true");
-} else {
-  console.log("its false");
-}
-
-//string with content is true
-// string without content is false
-// positive integer is true
-// negative integar is true
-// zero is false
-// array with content is true
-// empty array is true
-// null is false
-// empty object is true
-// object is true
-
-// template literal - template string
-
-const firstname = "Ola";
-const lastname = "Nordman";
-
-const fullname = ``firstName lastName`` 
-
-/* const fullname = firstname + "" + leastname; */
-
-console.log(fullname);
+const welcomeMessage = `Welcome to ${storeName}, we hope you enjoy your stay, our current offer is on ${productName}`;
+console.log(welcomeMessage);
