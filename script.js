@@ -148,12 +148,14 @@ console.log(newArray);
 
 const fruits = ["Bannana", "Apple", "Pear", "Kiwi"];
 
+const drinks = ["coke", "water", "milk", "orange juice"];
+
 const checkItem = (item, array) => {
-  return `the array does/dosent include ${item}`;
+  return `the array ${
+    array.includes(item) ? "does" : "dosent"
+  } include ${item}`;
 };
 
 console.log(checkItem("Apple", fruits));
-console.log(checkItem("Kiwi", fruits));
-console.log(checkItem("Grapes", fruits));
 
-console.log(fruits.includes("Apple"));
+console.log(fruits.includes("sprite", drinks));
