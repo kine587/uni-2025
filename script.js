@@ -1,101 +1,159 @@
-// recap
-// variables data types and operators
+// functions in javascript
 
-// online store manage
+//block of code to do a spesific task. write onnce can reuse it need to call it
 
-const storeName = "tech haven"; // string
-const productName = "wireless earbuds"; // string
-let productPrice = 75; // Number (interger)
-let productQuantity = 25; // interger
-let isInStock = true; // booleon
-let productTags = ["audio", "wireless", "accesory"]; // array
-let discount; //undefined
-discount = true;
-// console
-console.log(storeName);
-console.log(productName);
-console.log(productPrice);
-console.log(productQuantity);
-console.log(isInStock);
-console.log(productTags);
-console.log(discount);
+// functions declorations (statements) and hoisting
 
-console.log(productTags[2]);
-
-// calculate
-
-productQuantity++;
-
-const totalBasket = productPrice * productQuantity;
-
-console.log(totalBasket);
-
-//compound assignment: increase product price
-
-productPrice += 10;
-console.log(productPrice);
-/* productPrice = productPrice + 10 */
-
-//increase quantity
-
-productQuantity++;
-productQuantity--;
-console.log(productQuantity);
-
-// using the module  operator
-// find value when the total value is divided by 50
-
-console.log(totalBasket / 50);
-
-const reminder = totalBasket % 50;
-console.log(reminder);
-
-// condictional and logical
-
-//deside promotion based on total things in basket
-
-if (totalBasket > 350) {
-  console.log("you qualify for free delivery");
-} else if (totalBasket >= 300) {
-  console.log("youre close to free delivery spend 350 or more to qualify");
-} else {
-  console.log("free delivery with orders 350 or more");
+function sayHello() {
+  console.log("hello");
 }
-// condiction to say "youre close to free delivery"
+sayHello();
 
-// logical operators
+// arrow functions (introdused in ES6, great for short inline functions)
 
-// isInStock true
-// discount true
-// productQuantity is more than 20
+const arrowFunction = () => {
+  console.log("hello from the arrow function");
+};
 
-if (isInStock && (discount === true || productQuantity > 20)) {
-  console.log("congratulations your eligeble to a special offer");
+arrowFunction();
+
+// return statements and scope
+
+function one() {
+  console.log("this function logs a message without returning a value");
 }
 
-//ternary opperator:
+one();
 
-// if their total basket is over 350 they get free shipping othervise its a 15 fee
-const shippingCost = totalBasket >= 350 ? "free shipping" : "15 delivery fee";
-console.log(shippingCost);
+function two() {
+  const myMesage = "this message is returned from the function";
+  return myMesage; // last thing in function (return)
+}
 
-// typeoff opperator
+console.log(two());
 
-console.log(typeof storeName);
-console.log(typeof productPrice);
-console.log(typeof isInStock);
-console.log(typeof productTags);
+const myArray = [1, 2, 3];
 
-//temple litterals
+function changeArray() {
+  myArray[2] = 100;
+}
 
-/* const welcomeMessage =
-  "Welcome to" +
-  " " +
-  storeName +
-  " " +
-  "we hope you enjoy your stay, our current offer is on" +
-  " " +
-  productName; */
+changeArray();
 
-const welcomeMessage = `Welcome to ${storeName}, we hope you enjoy your stay, our current offer is on ${productName}`;
-console.log(welcomeMessage);
+console.log(myArray);
+
+// function with parammeters
+
+//example 1 - hard coded function, only return 3+4
+function add() {
+  return 3 + 4;
+}
+
+console.log(add());
+
+//example 2 -softcoded function, reusable, dynamic
+function subtract(num1, num2) {
+  return num1 - num2;
+}
+
+console.log(subtract(3, 4));
+console.log(subtract(10, 5));
+
+// example 3 - a greater function that uses parameters and temple literals
+
+/* const greeter = (time, name) => {
+  return "good" + "" + time + "" + name;
+}; */
+const greeter = (time, name) => {
+  return `good ${time}  ${name}`;
+};
+
+const userData = {
+  userName: "Joe",
+  address: "123 whatever",
+  tel: 49348349,
+};
+
+/* console.log(userData.userName);
+console.log(greeter("morning", userData.userName")); */
+
+/* console.log(greeter("Morning", "Joe"));
+console.log(greeter("Evening", "Ole"));
+console.log(greeter("Afternoon", "Bill")); */
+
+// implisit return in arrow functions
+
+/* const adder = (num1, num2) => {
+  return num1 + num2;
+}; */
+const adder = (num1, num2) => num1 + num2;
+
+console.log(adder(10, 5));
+
+// calculater function using switch
+
+function calculator(num1, num2, operator) {
+  switch (operator) {
+    case "+":
+      return num1 + num2;
+    case "-":
+      return num1 - num2;
+    case "*":
+      return num1 * num2;
+    case "/":
+      return num1 / num2;
+
+    default:
+      return "invalid operator";
+  }
+}
+
+console.log(calculator(10, 2, "*"));
+console.log(calculator(10, 2, "+"));
+console.log(calculator(10, 2, "-"));
+console.log(calculator(10, 2, "/"));
+console.log(calculator(10, 2, "%"));
+
+//uppdating a global variable via function
+
+let hp = 100;
+
+const uppdateHp = (amount, direction) => {
+  if (direction === "down") {
+    hp -= amount;
+  } else if (direction === "up") {
+    hp += amount;
+  }
+};
+
+uppdateHp(50, "down");
+console.log(hp);
+
+uppdateHp(25, "up");
+console.log(hp);
+
+const newArray = [];
+
+function updateArray(data) {
+  newArray.push(data);
+}
+
+updateArray(1);
+updateArray(6);
+updateArray(3);
+updateArray(9);
+console.log(newArray);
+
+// using templete litterals and tenary opperator
+
+const fruits = ["Bannana", "Apple", "Pear", "Kiwi"];
+
+const checkItem = (item, array) => {
+  return `the array does/dosent include ${item}`;
+};
+
+console.log(checkItem("Apple", fruits));
+console.log(checkItem("Kiwi", fruits));
+console.log(checkItem("Grapes", fruits));
+
+console.log(fruits.includes("Apple"));
