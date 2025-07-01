@@ -1,161 +1,119 @@
-// functions in javascript
+// methodes (string, array, and numbers)
+//a methods
 
-//block of code to do a spesific task. write onnce can reuse it need to call it
+//string methods
 
-// functions declorations (statements) and hoisting
+const text = "        Hello, javascript world         ";
 
-function sayHello() {
-  console.log("hello");
-}
-sayHello();
+const trimmedText = text.trim();
+/* trimedText = Text.trim(); */
 
-// arrow functions (introdused in ES6, great for short inline functions)
+console.log(text.trim()); // removing white space from bouth ends
 
-const arrowFunction = () => {
-  console.log("hello from the arrow function");
-};
+console.log(trimmedText.toUpperCase()); //converts to uppercase
 
-arrowFunction();
+console.log(trimmedText.toLowerCase()); // convert to lower case
 
-// return statements and scope
+console.log(trimmedText.indexOf("world")); // returnes the starting index of "javascript in the string"
 
-function one() {
-  console.log("this function logs a message without returning a value");
-}
+/* console.log = trimmedText.slice(7, 17); */
 
-one();
+/* console.log(slicedText); */
+console.log(trimmedText);
 
-function two() {
-  const myMesage = "this message is returned from the function";
-  return myMesage; // last thing in function (return)
-}
+console.log(trimmedText.replace("world", "universe")); // replacing first occurence
+console.log(trimmedText.replaceAll("world", "universe"));
 
-console.log(two());
+console.log(trimmedText.charCodeAt(0));
 
-const myArray = [1, 2, 3];
+console.log(trimmedText.length); //returns the lenght of the string
 
-function changeArray() {
-  myArray[2] = 100;
-}
+console.log(trimmedText.split(" ")); // split the sring to an array ofsubstrings spaces
 
-changeArray();
+console.log(trimmedText.repeat(3));
 
-console.log(myArray);
+// turning strings into numbers
 
-// function with parammeters
+const numericString = "123.45xyz";
 
-//example 1 - hard coded function, only return 3+4
-function add() {
-  return 3 + 4;
-}
+console.log(Number(numericString)); // converts entire string into number
 
-console.log(add());
+console.log(parseInt(numericString)); // pasets as an interger until an invalid character; returns 123
 
-//example 2 -softcoded function, reusable, dynamic
-function subtract(num1, num2) {
-  return num1 - num2;
-}
+console.log(parseFloat(numericString));
 
-console.log(subtract(3, 4));
-console.log(subtract(10, 5));
+// array methods
 
-// example 3 - a greater function that uses parameters and temple literals
+const colors = ["red", "green", "blue"];
 
-/* const greeter = (time, name) => {
-  return "good" + "" + time + "" + name;
-}; */
-const greeter = (time, name) => {
-  return `good ${time}  ${name}`;
-};
+console.log(colors.lenght); // returns the number of ellements in the array
 
-const userData = {
-  userName: "Joe",
-  address: "123 whatever",
-  tel: 49348349,
-};
+colors.push("yellow"); // adds yellow
+console.log(colors);
 
-/* console.log(userData.userName);
-console.log(greeter("morning", userData.userName")); */
+const lastColor = colors.pop(); //removes and returns last elements in array
+console.log(colors);
 
-/* console.log(greeter("Morning", "Joe"));
-console.log(greeter("Evening", "Ole"));
-console.log(greeter("Afternoon", "Bill")); */
+console.log(colors.join(" ")); // goes from array to string
 
-// implisit return in arrow functions
+console.log(colors.includes("green")); //checks if "green" is in the array (true or false)
 
-/* const adder = (num1, num2) => {
-  return num1 + num2;
-}; */
-const adder = (num1, num2) => num1 + num2;
+console.log(colors.shift()); // removes from the first array
 
-console.log(adder(10, 5));
+colors.unshift("purple"); // adds purple at the beggining
+console.log(colors);
 
-// calculater function using switch
+const newColors = colors.toSpliced(1, 1, "orange");
 
-function calculator(num1, num2, operator) {
-  switch (operator) {
-    case "+":
-      return num1 + num2;
-    case "-":
-      return num1 - num2;
-    case "*":
-      return num1 * num2;
-    case "/":
-      return num1 / num2;
+console.log(colors); // logs the overal array
+console.log(newColors);
 
-    default:
-      return "invalid operator";
-  }
-}
+const unsortedArray = [3, 1, 4, 1, 5, 9];
+const sortedArray = unsortedArray.toSorted();
 
-console.log(calculator(10, 2, "*"));
-console.log(calculator(10, 2, "+"));
-console.log(calculator(10, 2, "-"));
-console.log(calculator(10, 2, "/"));
-console.log(calculator(10, 2, "%"));
+console.log(unsortedArray);
+console.log(sortedArray);
 
-//uppdating a global variable via function
+const unsortedStringArray = ["c", "a", "b"];
+const sortedStringArray = unsortedStringArray.toSorted().toReversed();
+console.log(sortedStringArray);
 
-let hp = 100;
+console.log(sortedArray.at(0)); // first element
+console.log(sortedArray.at(-1)); // last element
 
-const uppdateHp = (amount, direction) => {
-  if (direction === "down") {
-    hp -= amount;
-  } else if (direction === "up") {
-    hp += amount;
-  }
-};
+const reversedArray = sortedArray.toReversed();
 
-uppdateHp(50, "down");
-console.log(hp);
+console.log(reversedArray);
 
-uppdateHp(25, "up");
-console.log(hp);
+//number methods
 
-const newArray = [];
+const myNum = 5.907674;
 
-function updateArray(data) {
-  newArray.push(data);
-}
+console.log(myNum.toFixed(2));
 
-updateArray(1);
-updateArray(6);
-updateArray(3);
-updateArray(9);
-console.log(newArray);
+console.log(myNum.toString());
 
-// using templete litterals and tenary opperator
+console.log(myNum.toExponential());
 
-const fruits = ["Bannana", "Apple", "Pear", "Kiwi"];
+// chaining methods together
 
-const drinks = ["coke", "water", "milk", "orange juice"];
+// example 1 chaining string methods
 
-const checkItem = (item, array) => {
-  return `the array ${
-    array.includes(item) ? "does" : "dosent"
-  } include ${item}`;
-};
+const rawString = "      javascript is fun        ";
+const processedString = rawString
+  .trim()
+  .replace("FUN", "awesome")
+  .toLowerCase();
 
-console.log(checkItem("Apple", fruits));
+console.log(processedString);
 
-console.log(fruits.includes("sprite", drinks));
+//2 chain array and string
+
+const words = ["hello", "world"];
+const stringFormArray = words.join(" ").toUpperCase();
+console.log(stringFormArray);
+
+//3 chain
+
+const chainedNum = myNum.toFixed(2).toString(2).split(" ").join(" ").repeat(2);
+console.log(chainedNum);
