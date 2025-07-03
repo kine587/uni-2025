@@ -115,5 +115,7 @@ console.log(stringFormArray);
 
 //3 chain
 
-const chainedNum = myNum.toFixed(2).toString(2).split(" ").join(" ").repeat(2);
+const chainedNum = myNum.toFixed(2).toString(2).repeat(2);
 console.log(chainedNum);
+
+
