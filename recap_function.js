@@ -124,6 +124,6 @@ console.log(possibleAnswers[2]); */
 /* const randomNum = Math.floor(Math.floor() * 3); */
 const randomNum = Math.floor(Math.floor() * possibleAnswers.length);
 
-aiAswer = possibleAnswers[randomNum];
+aiAnswer = possibleAnswers[randomNum];
 
 console.log(rockPaperScissors("rock", "aiAnswer"));
