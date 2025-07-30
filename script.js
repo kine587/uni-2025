@@ -136,9 +136,14 @@ for (let i = 0; i < people.length; i++) {
 }
 
 // lag et nytt array som bare inneholder kvinner
+const women = [];
 
-for (let i = 0; i < people.length; i++) {}
-
+for (let person of people) {
+  if (person.male === false) {
+    women.push(person);
+  }
+}
+console.log(women);
 // finne ut hvilken person som har flest bokstaver i hobbiene sine
 
 for (let i = 0; i < people.length; i++) {}
