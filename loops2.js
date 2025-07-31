@@ -112,7 +112,8 @@ for (let i = 0; i < people.lenght; i++) {
 console.log(combinedAge); */
 
 // isCool = true/false
-
+// math.random = 0.7674381581 < 0.5 returnes false
+// 0.452367 < 0.5 returnes true
 for (let i = 0; i < people.length; i++) {
   people[i].isCool = Math.random() < 0.5;
 }
@@ -132,9 +133,9 @@ console.log(oldPeopleHobbies);
 // legg till 1 til alle sin age
 const addOne = 1;
 for (let i = 0; i < people.length; i++) {
-  console.log(people[i].age + 1);
+  ++people[i].age;
 }
-
+console.log(people);
 // lag et nytt array som bare inneholder kvinner
 const women = [];
 
@@ -147,3 +148,10 @@ console.log(women);
 // finne ut hvilken person som har flest bokstaver i hobbiene sine
 
 for (let i = 0; i < people.length; i++) {}
+
+//
+
+for (let person of people) {
+  person.male = !person.male;
+}
+console.log(people);
