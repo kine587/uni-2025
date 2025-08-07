@@ -74,5 +74,5 @@ function checkGuess() {
 function endgame() {
   guessInput.disabled = true;
   guessButton.disabled = true;
-  restartButtton.Style.display = "inline-block";
+  restartButtton.style.display = "inline-block";
 }
